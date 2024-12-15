@@ -1,0 +1,35 @@
+{% extends 'App/base.html' %}
+
+{% block title %} Resultados de la Búsqueda {% endblock title %}
+
+{% block main %}
+<div class="form-container" style="max-width: 600px; margin: 50px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <h2>Resultados de la Búsqueda de Actividades</h2>
+  
+    {% if actividades %}
+      <table class="table" style="width: 100%; font-size: 14px; margin: 0;">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Horario</th>
+            <th>Profesor</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for actividad in actividades %}
+            <tr>
+              <td>{{ actividad.nombre }}</td>
+              <td>{{ actividad.horario }}</td>
+              <td>{{ actividad.profesor }}</td>
+              <td>{{ actividad.descripcion }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No se encontraron resultados.</p>
+    {% endif %}
+</div>
+{% endblock main %}
+

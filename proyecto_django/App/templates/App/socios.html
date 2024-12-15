@@ -1,0 +1,46 @@
+{% extends "App/base.html" %}
+
+{% load static %}
+
+{% block main %}
+
+<div class="container-fluid fh5co-network" style="background-color: #1a1a1a; color: white;">
+    <div class="container">
+        <div class="row">
+            <!-- Columna de texto -->
+            <div class="col-md-6">
+                <h4 class="wow bounceInUp">Comunidad</h4>
+                <h2 class="wow bounceInRight">Socios</h2>
+                <hr />
+                <h5 class="wow bounceInLeft">RUNNING SUMMER 2025</h5>
+                <p class="wow bounceInDown">"¿Estás listo para ser parte de una comunidad dinámica de runners? Nuestra Comunidad Socios Running 2025 te ayudará a mejorar tu resistencia, alcanzar tus objetivos y disfrutar de cada carrera. ¡Corre con nosotros y haz que 2025 sea tu mejor año!"</p>
+                
+                <!-- Beneficios para socios -->
+                <div class="wow bounceInUp" style="background-color: #000000; padding: 20px; border-radius: 8px;">
+                    <h3 style="font-weight: bold; color: white;">Beneficios Exclusivos para Socios</h3>
+                    <ul style="color: white; font-weight: bold;">
+                        <li>Acceso exclusivo a clases personalizadas con entrenadores profesionales.</li>
+                        <li>Descuentos especiales en nutrición deportiva y suplementos.</li>
+                        <li>Planificación de entrenamientos adaptados a tus metas y nivel.</li>
+                        <li>Acceso a un grupo privado para compartir experiencias y motivación.</li>
+                        <li>Prioridad en la inscripción a eventos y actividades especiales.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Columna de imagen -->
+            <div class="col-md-6">
+                <figure class="wow bounceInDown">
+                    <img src="{% static 'App/images/about-img.jpg' %}" alt="gym" class="img-fluid" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock main %}

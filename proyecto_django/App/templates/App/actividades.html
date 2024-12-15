@@ -1,0 +1,145 @@
+{% extends "App/base.html" %}
+
+{% load static %}
+
+{% block main %}
+<div class="container-fluid fh5co-content-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 pr-0"><img src="{% static 'App/images/rode-gym.jpg' %}" alt="gym" class="img-fluid wow bounceInLeft" /> </div>
+        <div class="col-md-7 pl-0">
+          <div class="wow bounceInRight" data-wow-delay=".25s">
+            <div class="card-img-overlay">
+              <p>"Planes de entrenamiento hechos para ti, con la guía de nuestros entrenadores profesionales."
+                "Optimiza tu rendimiento físico con la asesoría nutricional que necesitas."
+                "Tu salud, tu energía y tus metas, nuestros expertos te acompañarán a cada paso." </p>
+            </div>
+            <img src="{% static 'App/images/gym-girls.jpg' %}" alt="girls in gym" class="img-fluid" /> </div>
+        </div>
+      </div>
+      
+      <!-- Sección de entrenadores -->
+      <div class="row trainers pl-0 pr-0">
+        <div class="col-12 bg-50">
+          <div class="quote-box2 wow bounceInDown" data-wow-delay=".25s">
+            <h2>TRAINERS</h2>
+          </div>
+        </div>
+        <div class="col-md-6 pr-5 pl-5">
+          <div class="card text-center wow bounceInLeft" data-wow-delay=".25s">
+            <img class="card-img-top rounded-circle img-fluid" src="{% static 'App/images/trainers1.jpg' %}" alt="Card image">
+            <div class="card-body mb-5">
+              <h4 class="card-title">Luciana</h4>
+              <p class="card-text">Áreas de especialización:
+                Tonificación muscular. Pilates y entrenamiento de flexibilidad. Entrenamiento en grupo. Coaching de bienestar y motivación.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 pl-5 pr-5">
+          <div class="card text-center wow bounceInRight" data-wow-delay=".25s">
+            <img class="card-img-top rounded-circle img-fluid" src="{% static 'App/images/trainers2.jpg' %}" alt="Card image">
+            <div class="card-body mb-5">
+              <h4 class="card-title">Maximiliano</h4>
+              <p class="card-text">Áreas de especialización:
+                Entrenamiento funcional. Acondicionamiento físico. Planificación de rutinas personalizadas. Rehabilitación de lesiones.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tabla de actividades con fondo negro y letras blancas -->
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-center text-white">Grilla de Actividades</h3>
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th>Actividad</th>
+                <th>Horario</th>
+                <th>Profesor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Zumba</td>
+                <td>10:00 - 11:00</td>
+                <td>Luciana</td>
+              </tr>
+              <tr>
+                <td>Crossfit</td>
+                <td>11:30 - 12:30</td>
+                <td>Maximiliano</td>
+              </tr>
+              <tr>
+                <td>Funcional</td>
+                <td>13:00 - 14:00</td>
+                <td>Luciana</td>
+              </tr>
+              <tr>
+                <td>Flexibilidad</td>
+                <td>16:00 - 17:00</td>
+                <td>Maximiliano</td>
+              </tr>
+              <tr>
+                <td>Boxeo</td>
+                <td>17:30 - 18:30</td>
+                <td>Luciana</td>
+              </tr>
+              <tr>
+                <td>Pilates</td>
+                <td>18:30 - 19:30</td>
+                <td>Maximiliano</td>
+              </tr>
+              <tr>
+                <td>HIIT</td>
+                <td>20:00 - 21:00</td>
+                <td>Luciana</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+      <!-- Galería de imágenes -->
+      <div class="row gallery">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body mb-4 wow bounceInLeft" data-wow-delay=".25s">
+              <h4 class="card-title">Flexibilidad</h4>
+              <p class="card-text">"Mejora tu flexibilidad corporal con entrenamientos personalizados que te ayudarán a ganar mayor rango de movimiento y evitar lesiones."</p>
+            </div>
+            <img class="card-img-top img-fluid wow bounceInRight" data-wow-delay=".25s" src="{% static 'App/images/g1.jpg' %}" alt="Card image"> 
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid wow bounceInUp" data-wow-delay=".25s" src="{% static 'App/images/g2.jpg' %}" alt="Card image">
+            <div class="card-body mt-4 wow bounceInDown" data-wow-delay=".25s">
+              <h4 class="card-title">Energia</h4>
+              <p class="card-text">"Aumenta tu vitalidad y energía, mejorando tu bienestar general y dándote más fuerza para enfrentar el día a día."</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body mb-4 wow bounceInRight" data-wow-delay=".25s">
+              <h4 class="card-title">Superacion</h4>
+              <p class="card-text">"A través del deporte, constantemente te desafiarás a ti mismo, superando tus propios límites y alcanzando nuevas metas."</p>
+            </div>
+            <img class="card-img-top img-fluid wow bounceInLeft" data-wow-delay=".25s" src="{% static 'App/images/g3.jpg'%}" alt="Card image"> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        
+       
+  
+     
+       
+
+
+
+
+{% endblock main %}

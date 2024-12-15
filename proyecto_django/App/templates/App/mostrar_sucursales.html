@@ -1,0 +1,32 @@
+{% extends 'App/base.html' %}
+
+{% block title %} Resultados de la Búsqueda de Sucursales {% endblock title %}
+
+{% block main %}
+<div class="form-container" style="max-width: 600px; margin: 50px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <h2>Resultados de la Búsqueda de Sucursales</h2>
+  
+    {% if sucursales %}
+      <table class="table" style="width: 100%; font-size: 14px; margin: 0;">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sucursal in sucursales %}
+            <tr>
+              <td>{{ sucursal.nombre }}</td>
+              <td>{{ sucursal.direccion }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No se encontraron resultados.</p>
+    {% endif %}
+</div>
+{% endblock main %}
+
+

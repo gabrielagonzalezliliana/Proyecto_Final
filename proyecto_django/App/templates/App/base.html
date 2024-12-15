@@ -1,0 +1,249 @@
+<!doctype html>
+{% load static %}
+<!--
+	Fox by FreeHTML5.co
+	Twitter: https://twitter.com/fh5co
+	Facebook: https://fb.com/fh5co
+	URL: https://freehtml5.co
+
+-->
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>freehtml5</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'App/css/animate.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'App/css/bootstrap.min.css' %}" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'App/css/style.css' %}">
+
+</head>
+<body>
+<div class="container-fluid pl-0 pr-0 bg-img clearfix parallax-window2" data-parallax="scroll" data-image-src="{% static 'App/images/banner2.jpg' %}">
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container"> 
+      <!-- Brand --> 
+      <a class="navbar-brand mr-auto" href="#"><img src="{% static 'App/images/logo.png' %}" alt="FoxPro" /></a> 
+      
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+      
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'inicio' %}">Inicio</a> </li>
+        
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false" style="background-color: transparent; border: none; color: white;">
+              Socios
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu" style="display: none; background-color: #343a40; border: 1px solid #444;">
+              <a class="dropdown-item" href="{% url 'socios' %}" style="color: white;">Eventos para socios</a>
+              <a class="dropdown-item" href="{% url 'buscar_socio' %}" style="color: white;">Buscar</a>
+              <a class="dropdown-item" href="{% url 'socios_formulario' %}" style="color: white;">Agregar</a>
+            </div>
+          </div>
+
+
+          
+
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonActividades" aria-haspopup="true" aria-expanded="false" style="background-color: transparent; border: none; color: white;">
+              Actividades
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu" style="display: none; background-color: #343a40; border: 1px solid #444;">
+              <a class="dropdown-item" href="{% url 'actividades' %}" style="color: white;">Actividades</a>
+              <a class="dropdown-item" href="{% url 'buscar_actividades' %}" style="color: white;">Buscar</a>
+              <a class="dropdown-item" href="{% url 'actividades_formulario' %}" style="color: white;">Agregar</a>
+            </div>
+          </div>
+
+          
+
+
+
+
+          
+
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuSucursales" aria-haspopup="true" aria-expanded="false" style="background-color: transparent; border: none; color: white;">
+              Sucursales
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu" style="display: none; background-color: #343a40; border: 1px solid #444;">
+              <a class="dropdown-item" href="{% url 'sucursales' %}" style="color: white;">Sucursales</a>
+              <a class="dropdown-item" href="{% url 'buscar_sucursales' %}" style="color: white;">Buscar</a>
+              <a class="dropdown-item" href="{% url 'sucursales_formulario' %}" style="color: white;">Agregar</a>
+            </div>
+          </div>
+
+
+        
+
+          
+
+          
+          
+
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="fh5co-banner-text-box">
+      <div class="quote-box pl-5 pr-5 wow bounceInRight">
+        <h2> DESAFIA TUS LIMITES <br><span>TRANSFORMA TU CUERPO Y MEJORA TU VIDA</span> </h2>
+      </div>
+  </div>
+</div>
+
+{% block main %}
+{% endblock main %}
+
+<footer class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 footer1 d-flex wow bounceInLeft" data-wow-delay=".25s">
+        <div class="d-flex flex-wrap align-content-center"> <a href="#"><img src="{% static 'App/images/logo.png' %}" alt="logo" /></a>
+          <p></p>
+          <p>&copy; 2018 Foxpro. All rights reserved.<br> Design by <a href="https://freehtml5.co" target="_blank">FreeHTML5</a>.</p>
+        </div>
+      </div>
+      <div class="col-md-6 footer2 wow bounceInUp" data-wow-delay=".25s" id="contact">
+        <div class="form-box">
+          <h4>CONTACTO</h4>
+          <table class="table table-responsive d-table">
+            <tr>
+              <td><input type="text" class="form-control pl-0" placeholder="NOMBRE" /></td>
+              <td><input type="email" class="form-control pl-0" placeholder="EMAIL" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" class="form-control pl-0" placeholder="DOMICILIO" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" class="form-control pl-0" placeholder="MENSAJE" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center pl-0"><button type="submit" class="btn btn-dark">Enviar</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-3 footer3 wow bounceInRight" data-wow-delay=".25s">
+        <h5>Sede Central</h5>
+        <p>Av.Velez Sarfiel 1800, Cordoba Capital</p>
+        <h5>Celular</h5>
+        <p>351-9663872</p>
+        <p>351-7953812</p>
+        <h5>Email</h5>
+        <p>FoxPro@gmail.com</p>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Optional JavaScript --> 
+<!-- jQuery first, then Bootstrap JS, ... -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/main.js"></script>
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("dropdownMenuButton");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownButton.addEventListener("click", function () {
+      // Cambiar entre mostrar y ocultar el menú
+      if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+        dropdownMenu.style.display = "block";
+      } else {
+        dropdownMenu.style.display = "none";
+      }
+    });
+
+    // Cerrar el menú si haces clic fuera de él
+    document.addEventListener("click", function (event) {
+      if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("dropdownMenuButtonActividades");
+    const dropdownMenu = document.querySelector("#dropdownMenuButtonActividades + .dropdown-menu");
+
+    dropdownButton.addEventListener("click", function () {
+      // Cambiar entre mostrar y ocultar el menú
+      if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+        dropdownMenu.style.display = "block";
+      } else {
+        dropdownMenu.style.display = "none";
+      }
+    });
+
+    // Cerrar el menú si haces clic fuera de él
+    document.addEventListener("click", function (event) {
+      if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.getElementById("dropdownMenuSucursales");
+    const dropdownMenu = document.querySelector("#dropdownMenuSucursales + .dropdown-menu");
+
+    dropdownButton.addEventListener("click", function () {
+      // Cambiar entre mostrar y ocultar el menú
+      if (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+        dropdownMenu.style.display = "block";
+      } else {
+        dropdownMenu.style.display = "none";
+      }
+    });
+
+    // Cerrar el menú si haces clic fuera de él
+    document.addEventListener("click", function (event) {
+      if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  });
+</script>
+
+
+
+ 
+
+
+
+
+
+
+</body>
+</html>
