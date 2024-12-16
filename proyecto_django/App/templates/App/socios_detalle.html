@@ -1,0 +1,28 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}Socio Detalle{% endblock title %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Contenedor con fondo blanco -->
+            <div class="p-4 bg-white rounded shadow">
+                <h1 class="text-center mb-4">Detalle del Socio</h1>
+
+                <p>Nombre del Socio: <i>{{ socios.nombre }}</i></p>
+                <p>Apellido: <i>{{ socios.apellido }}</i></p>
+                <p>DNI: <i>{{ socios.dni }}</i></p>
+                <p>Email: <i>{{ socios.email }}</i></p>
+                <p>Teléfono: <i>{{ socios.telefono }}</i></p>
+
+                <div class="text-center mt-4">
+                    <a href="{% url 'ListaSocios' %}" class="btn btn-secondary btn-lg">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}

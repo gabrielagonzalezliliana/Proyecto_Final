@@ -35,6 +35,12 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"> <a class="nav-link" href="{% url 'inicio' %}">Inicio</a> </li>
+          
+      
+          
+         
+
+
         
           <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false" style="background-color: transparent; border: none; color: white;">
@@ -44,6 +50,7 @@
               <a class="dropdown-item" href="{% url 'socios' %}" style="color: white;">Eventos para socios</a>
               <a class="dropdown-item" href="{% url 'buscar_socio' %}" style="color: white;">Buscar</a>
               <a class="dropdown-item" href="{% url 'socios_formulario' %}" style="color: white;">Agregar</a>
+              <a class="dropdown-item" href="{% url 'ListaSocios' %}" style="color: white;">Listado de Socios</a>
             </div>
           </div>
 
@@ -107,41 +114,19 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 footer1 d-flex wow bounceInLeft" data-wow-delay=".25s">
-        <div class="d-flex flex-wrap align-content-center"> <a href="#"><img src="{% static 'App/images/logo.png' %}" alt="logo" /></a>
+        <div class="d-flex flex-wrap align-content-center">
+          <a href="#"><img src="{% static 'App/images/logo.png' %}" alt="logo" /></a>
           <p></p>
           <p>&copy; 2018 Foxpro. All rights reserved.<br> Design by <a href="https://freehtml5.co" target="_blank">FreeHTML5</a>.</p>
         </div>
       </div>
-      <div class="col-md-6 footer2 wow bounceInUp" data-wow-delay=".25s" id="contact">
-        <div class="form-box">
-          <h4>CONTACTO</h4>
-          <table class="table table-responsive d-table">
-            <tr>
-              <td><input type="text" class="form-control pl-0" placeholder="NOMBRE" /></td>
-              <td><input type="email" class="form-control pl-0" placeholder="EMAIL" /></td>
-            </tr>
-            <tr>
-              <td colspan="2"></td>
-            </tr>
-            <tr>
-              <td colspan="2"><input type="text" class="form-control pl-0" placeholder="DOMICILIO" /></td>
-            </tr>
-            <tr>
-              <td colspan="2"></td>
-            </tr>
-            <tr>
-              <td colspan="2"><input type="text" class="form-control pl-0" placeholder="MENSAJE" /></td>
-            </tr>
-            <tr>
-              <td colspan="2"></td>
-            </tr>
-            <tr>
-              <td colspan="2" class="text-center pl-0"><button type="submit" class="btn btn-dark">Enviar</button></td>
-            </tr>
-          </table>
-        </div>
+
+      <!-- Columna del medio con la imagen -->
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="{% static 'App/images/about-us-bg.jpg' %}" alt="About Us" class="img-fluid" />
       </div>
-      <div class="col-md-3 footer3 wow bounceInRight" data-wow-delay=".25s">
+
+      <div class="col-md-3 footer3 wow bounceInRight text-end" data-wow-delay=".25s">
         <h5>Sede Central</h5>
         <p>Av.Velez Sarfiel 1800, Cordoba Capital</p>
         <h5>Celular</h5>
@@ -149,11 +134,11 @@
         <p>351-7953812</p>
         <h5>Email</h5>
         <p>FoxPro@gmail.com</p>
-        
       </div>
     </div>
   </div>
 </footer>
+
 
 <!-- Optional JavaScript --> 
 <!-- jQuery first, then Bootstrap JS, ... -->

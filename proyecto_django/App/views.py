@@ -143,3 +143,48 @@ def buscar_sucursales(request):
         mi_formulario = BuscarSucursales()
 
     return render(request, "App/buscar_sucursales.html", {"mi_formulario": mi_formulario})
+
+#vistas basadas en clases 
+
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView,UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+
+#socios
+class SociosListView(ListView):
+    model = socios
+    context_object_name = "socios"
+    template_name = "App/socios_lista.html"
+
+
+class SociosDetailView(DetailView):
+    model = socios
+    template_name = "App/socios_detalle.html"
+
+
+class SociosCreateView(CreateView):
+    model = socios
+    template_name = "App/socios_crear.html"
+    success_url = reverse_lazy("ListaSocios")
+    fields = ["nombre", "apellido", "dni", "email", "telefono"]
+
+
+class SociosUpdateView(UpdateView):
+    model = socios
+    template_name = "App/socios_editar.html"
+    success_url = reverse_lazy("ListaSocios")
+    fields = ["nombre", "apellido", "dni", "email", "telefono"]
+
+
+class SociosDeleteView(DeleteView):
+    model = socios
+    template_name = "App/socios_borrar.html"
+    success_url = reverse_lazy("ListaSocios")
+
+
+
+
+
+

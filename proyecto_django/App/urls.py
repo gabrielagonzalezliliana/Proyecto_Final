@@ -18,4 +18,12 @@ forms_api = [
     path('buscar-sucursales/', views.buscar_sucursales, name= 'buscar_sucursales')
 ]
 
-urlpatterns += forms_api
+clases_basadas_vistas = [
+    path('socios-lista/', views.SociosListView.as_view(), name = "ListaSocios"),
+    path('socios-ver/<pk>/', views.SociosDetailView.as_view(), name= "DetalleSocio"),
+    path('socios-nuevo/', views.SociosCreateView.as_view(), name = "NuevoSocio"),
+    path('socios-editar/<pk>/', views.SociosUpdateView.as_view(), name = "EditarSocio"),  
+    path('socios-borrar/<pk>/', views.SociosDeleteView.as_view(), name = "BorrarSocio")        
+]
+
+urlpatterns += forms_api + clases_basadas_vistas
