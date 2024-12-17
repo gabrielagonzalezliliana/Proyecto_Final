@@ -1,0 +1,36 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+    <div class="d-flex justify-content-center align-items-center vh-100" style="background-color: #000;"> <!-- Fondo negro en toda la página -->
+        {# Contenedor principal con fondo blanco y sombra #}
+        <div class="p-4 rounded shadow" style="background-color: #fff; max-width: 400px; width: 100%;">
+            <h2 class="text-center mb-4">Iniciar Sesión</h2>
+
+            {# Mensaje personalizado en la vista de Login #}
+            {% if msg_login %}
+                <p class="fs-5 fw-bold text-danger text-center">{{ msg_login }}</p>
+            {% endif %}
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="{{ form.username.id_for_label }}" class="form-label">Nombre de Usuario:</label>
+                    {{ form.username }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña:</label>
+                    {{ form.password }}
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary w-100" value="Iniciar sesión">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock main %}
+

@@ -1,0 +1,21 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %} Logout {% endblock title %}
+
+{% block main %}
+    <div class="d-flex justify-content-center align-items-center vh-100" style="background-color: #000;">
+        <!-- Contenedor principal con fondo blanco y sombra -->
+        <div class="p-4 rounded shadow" style="background-color: #fff; max-width: 400px; width: 100%;">
+            <h2 class="text-center mb-4">Sesión Cerrada</h2>
+
+            {# Mensaje de logout #}
+            <p class="fs-5 fw-bold text-success text-center">Has cerrado sesión correctamente.</p>
+
+            <div class="text-center">
+                <a href="{% url 'Login' %}" class="btn btn-primary w-100">Volver al Login</a>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
