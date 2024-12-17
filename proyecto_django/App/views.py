@@ -195,6 +195,46 @@ class SociosDeleteView(DeleteView):
     success_url = reverse_lazy("ListaSocios")
 
 
+# actividades
+
+class ActividadesListView(ListView):
+    model = actividades
+    context_object_name = "actividades"
+    template_name = "App/actividades_lista.html"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Obtener el parámetro de búsqueda desde la URL (por ejemplo, búsqueda por nombre)
+        nombre = self.request.GET.get('nombre', None)
+        
+        # Si el nombre está presente, filtrar las actividades por nombre
+        if nombre:
+            queryset = queryset.filter(nombre__icontains=nombre)  # Busca por nombre de forma parcial
+        
+        return queryset
+    
+class ActividadesDetailView(DetailView):
+    model = actividades
+    template_name = "App/actividades_detalle.html"
+
+
+class ActividadesCreateView(CreateView):
+    model = actividades
+    template_name = "App/actividades_crear.html"
+    success_url = reverse_lazy("ListaActividades")  
+    fields = ["nombre", "horario", "profesor", "descripcion"]  
+
+
+class ActividadesUpdateView(UpdateView):
+    model = actividades
+    template_name = "App/actividades_editar.html"
+    success_url = reverse_lazy("ListaActividades")  
+    fields = ["nombre", "horario", "profesor", "descripcion"]  
+
+class ActividadesDeleteView(DeleteView):
+    model = actividades
+    template_name = "App/actividades_borrar.html"
+    success_url = reverse_lazy("ListaActividades")
 
 
 

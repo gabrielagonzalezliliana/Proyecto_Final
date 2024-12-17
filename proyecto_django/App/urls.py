@@ -23,7 +23,12 @@ clases_basadas_vistas = [
     path('socios-ver/<pk>/', views.SociosDetailView.as_view(), name= "DetalleSocio"),
     path('socios-nuevo/', views.SociosCreateView.as_view(), name = "NuevoSocio"),
     path('socios-editar/<pk>/', views.SociosUpdateView.as_view(), name = "EditarSocio"),  
-    path('socios-borrar/<pk>/', views.SociosDeleteView.as_view(), name = "BorrarSocio")        
+    path('socios-borrar/<pk>/', views.SociosDeleteView.as_view(), name = "BorrarSocio"),
+    path('actividades-lista/', views.ActividadesListView.as_view(), name = "ListaActividades"),
+    path('actividades-ver/<pk>/', views.ActividadesDetailView.as_view(), name= "DetalleActividad"),
+    path('actividades-nuevo/', views.ActividadesCreateView.as_view(), name = "NuevaActividad"),
+    path('actividades-editar/<pk>/', views.ActividadesUpdateView.as_view(), name = "EditarActividad"),  
+    path('actividades-borrar/<pk>/', views.ActividadesDeleteView.as_view(), name = "BorrarActividad")
 ]
 
 urlpatterns += forms_api + clases_basadas_vistas

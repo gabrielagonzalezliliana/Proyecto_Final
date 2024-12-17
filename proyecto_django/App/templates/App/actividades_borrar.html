@@ -1,0 +1,27 @@
+{% extends "App/base.html" %}
+
+{% load static %}
+
+{% block title %}Borrar Actividad{% endblock title %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Contenedor con fondo blanco -->
+            <div class="p-4 bg-white rounded shadow">
+                <h1 class="text-center mb-4">Borrar Actividad</h1>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <p>¿Estás seguro que deseas borrar la actividad "{{ actividad.nombre }}" - Horario: {{ actividad.horario }} - Profesor: {{ actividad.profesor }}?</p>
+                    <input type="submit" class="btn btn-danger btn-lg" value="Eliminar">
+                </form>
+
+                <!-- Botón Regresar -->
+                <a href="{% url 'ListaActividades' %}" class="btn btn-secondary btn-lg mt-4">Regresar</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}

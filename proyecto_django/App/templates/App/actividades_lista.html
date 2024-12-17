@@ -1,0 +1,77 @@
+{% extends "App/base.html" %}
+
+{% load static %}
+
+{% block title %}Listado de Actividades{% endblock title %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <!-- Contenedor con fondo blanco -->
+            <div class="p-4 bg-white rounded shadow">
+                <h1 class="text-center mb-4">Listado de Actividades</h1>
+
+                <!-- Botón para crear una nueva actividad -->
+                <div class="text-center mb-3">
+                    <a href="{% url 'NuevaActividad' %}" class="btn btn-primary btn-lg">Crear Nueva Actividad</a>
+                </div>
+
+                <!-- Formulario de búsqueda de actividades -->
+                {% if not request.GET.nombre %}
+                 <form method="GET" action="{% url 'ListaActividades' %}">
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" name="nombre" class="form-control" placeholder="Buscar por nombre de actividad" value="{{ request.GET.nombre }}">
+                    </div>
+                    <div class="col">
+                       <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+
+            <!-- Si hay un nombre de actividad en la búsqueda, mostrar el botón de regreso -->
+            {% if request.GET.nombre %}
+            <div class="text-center mt-3">
+                <!-- Botón que limpia el filtro y regresa a la lista completa -->
+                <a href="{% url 'ListaActividades' %}" class="btn btn-secondary">Regresar</a>
+            </div>
+            {% endif %}
+
+                <!-- Tabla de actividades -->
+                <table class="table table-hover table-striped text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Horario</th>
+                            <th>Profesor</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for actividad in actividades %}
+                            <tr>
+                                <td>{{ actividad.nombre }}</td>
+                                <td>{{ actividad.horario }}</td>
+                                <td>{{ actividad.profesor }}</td>
+                                <td>{{ actividad.descripcion }}</td>
+                                <td>
+                                    <a href="{% url 'DetalleActividad' actividad.pk %}" class="btn btn-info btn-sm">Ver</a>
+                                    <a href="{% url 'EditarActividad' actividad.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="{% url 'BorrarActividad' actividad.pk %}" class="btn btn-danger btn-sm">Borrar</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5">No hay actividades registradas.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
