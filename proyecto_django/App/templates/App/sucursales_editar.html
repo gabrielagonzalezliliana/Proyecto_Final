@@ -1,0 +1,36 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}Editar Sucursal{% endblock title %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="p-4 bg-white rounded shadow">
+                <h1 class="text-center mb-4">Editar Sucursal</h1>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table class="table">
+                        {{ form.as_table }}
+                    </table>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios">
+                    </div>
+                </form>
+
+                 <!-- Botón Regresar -->
+                 <div class="text-center mt-3">
+                    <a href="{% url 'ListaSucursales' %}" class="btn btn-secondary btn-lg">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
+
+
+
+    

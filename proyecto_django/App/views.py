@@ -236,6 +236,45 @@ class ActividadesDeleteView(DeleteView):
     template_name = "App/actividades_borrar.html"
     success_url = reverse_lazy("ListaActividades")
 
+# sucursales 
+class SucursalesListView(ListView):
+    model = sucursales
+    context_object_name = "sucursales"
+    template_name = "App/sucursales_lista.html"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Obtener el parámetro de búsqueda desde la URL (por ejemplo, búsqueda por nombre)
+        nombre = self.request.GET.get('nombre', None)
+        
+        # Si el nombre está presente, filtrar las sucursales por nombre
+        if nombre:
+            queryset = queryset.filter(nombre__icontains=nombre)  # Busca por nombre de forma parcial
+        
+        return queryset
+    
+class SucursalesDetailView(DetailView):
+    model = sucursales
+    template_name = "App/sucursales_detalle.html"
+
+
+class SucursalesCreateView(CreateView):
+    model = sucursales
+    template_name = "App/sucursales_crear.html"
+    success_url = reverse_lazy("ListaSucursales")  
+    fields = ["nombre", "direccion"]  
+
+
+class SucursalesUpdateView(UpdateView):
+    model = sucursales
+    template_name = "App/sucursales_editar.html"
+    success_url = reverse_lazy("ListaSucursales")  
+    fields = ["nombre", "direccion"]  
+
+class SucursalesDeleteView(DeleteView):
+    model = sucursales
+    template_name = "App/sucursales_borrar.html"
+    success_url = reverse_lazy("ListaSucursales")
 
 
 

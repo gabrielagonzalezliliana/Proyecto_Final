@@ -1,0 +1,31 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}Borrar Sucursal{% endblock title %}
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Contenedor con fondo blanco -->
+            <div class="p-4 bg-white rounded shadow">
+                <h1 class="text-center mb-4">¿Estás seguro de que deseas eliminar esta sucursal?</h1>
+
+                <p><strong>Nombre:</strong> {{ sucursales.nombre }}</p>
+                <p><strong>Dirección:</strong> {{ sucursales.direccion }}</p>
+
+                <div class="text-center mt-4">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-lg">Eliminar</button>
+                    </form>
+                    <br><br>
+                    <!-- Botón Regresar -->
+                    <a href="{% url 'ListaSucursales' %}" class="btn btn-secondary btn-lg">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
