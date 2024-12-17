@@ -10,9 +10,10 @@
         <div class="p-4 rounded shadow" style="background-color: #fff; max-width: 400px; width: 100%;">
             <h2 class="text-center mb-4">Iniciar Sesión</h2>
 
-            {# Mensaje personalizado en la vista de Login #}
+            {# Mensaje de error si la autenticación falla #}
             {% if msg_login %}
                 <p class="fs-5 fw-bold text-danger text-center">{{ msg_login }}</p>
+                <p class="text-center">¿Te has equivocado? Ingresa los datos nuevamente.</p>
             {% endif %}
 
             <form action="" method="POST">
@@ -30,7 +31,14 @@
                     <input type="submit" class="btn btn-primary w-100" value="Iniciar sesión">
                 </div>
             </form>
+
+            {# Si no estás registrado, muestra el botón de registro #}
+            <div class="text-center mt-3">
+                <p>No estás registrado?</p>
+                <a href="{% url 'Register' %}" class="btn btn-secondary w-100">Registrarse</a>
+            </div>
         </div>
     </div>
 {% endblock main %}
+
 
