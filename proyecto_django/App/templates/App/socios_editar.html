@@ -19,7 +19,13 @@
                         {{ form.as_table }}
                     </table>
                     <div class="text-center">
-                        <input type="submit" class="btn btn-warning btn-lg" value="Editar">
+                        <!-- Contenedor para alinear los botones -->
+                        <div class="d-flex justify-content-center">
+                            <!-- Botón de Regresar -->
+                            <a href="{% url 'ListaSocios' %}" class="btn btn-secondary btn-lg mr-3">Regresar</a>
+                            <!-- Botón de Editar -->
+                            <input type="submit" class="btn btn-warning btn-lg" value="Editar">
+                        </div>
                     </div>
                 </form>
             </div>
@@ -27,3 +33,4 @@
     </div>
 </div>
 {% endblock main %}
+

@@ -158,6 +158,17 @@ class SociosListView(ListView):
     context_object_name = "socios"
     template_name = "App/socios_lista.html"
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        # Obtener el parámetro de búsqueda desde la URL
+        dni = self.request.GET.get('dni', None)
+        
+        # Si el DNI está presente, filtrar los socios por DNI
+        if dni:
+            queryset = queryset.filter(dni=dni)
+        
+        return queryset
+
 
 class SociosDetailView(DetailView):
     model = socios

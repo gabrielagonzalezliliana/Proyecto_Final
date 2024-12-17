@@ -17,6 +17,35 @@
                     <a href="{% url 'NuevoSocio' %}" class="btn btn-primary btn-lg">Crear Nuevo Socio</a>
                 </div>
 
+                <!-- Formulario de búsqueda de socios -->
+                {% if not request.GET.dni %}
+                 <form method="GET" action="{% url 'ListaSocios' %}">
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" name="dni" class="form-control" placeholder="Buscar por DNI" value="{{ request.GET.dni }}">
+                    </div>
+                    <div class="col">
+                       <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </form>
+            {% endif %}
+
+            <!-- Si hay un DNI de búsqueda, mostrar el botón de regreso -->
+            {% if request.GET.dni %}
+            <div class="text-center mt-3">
+                <!-- Botón que limpia el filtro y regresa a la lista completa -->
+                <a href="{% url 'ListaSocios' %}" class="btn btn-secondary">Regresar</a>
+            </div>
+            {% endif %}
+
+
+
+
+                
+
+                
+
                 <!-- Tabla de socios -->
                 <table class="table table-hover table-striped text-center">
                     <thead class="thead-dark">
@@ -55,4 +84,5 @@
     </div>
 </div>
 {% endblock main %}
+
 
