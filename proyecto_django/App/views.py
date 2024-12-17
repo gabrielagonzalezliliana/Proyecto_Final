@@ -150,10 +150,11 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView,UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 #socios
-class SociosListView(ListView):
+class SociosListView(LoginRequiredMixin, ListView):
     model = socios
     context_object_name = "socios"
     template_name = "App/socios_lista.html"
@@ -170,26 +171,26 @@ class SociosListView(ListView):
         return queryset
 
 
-class SociosDetailView(DetailView):
+class SociosDetailView(LoginRequiredMixin, DetailView):
     model = socios
     template_name = "App/socios_detalle.html"
 
 
-class SociosCreateView(CreateView):
+class SociosCreateView(LoginRequiredMixin, CreateView):
     model = socios
     template_name = "App/socios_crear.html"
     success_url = reverse_lazy("ListaSocios")
     fields = ["nombre", "apellido", "dni", "email", "telefono"]
 
 
-class SociosUpdateView(UpdateView):
+class SociosUpdateView(LoginRequiredMixin, UpdateView):
     model = socios
     template_name = "App/socios_editar.html"
     success_url = reverse_lazy("ListaSocios")
     fields = ["nombre", "apellido", "dni", "email", "telefono"]
 
 
-class SociosDeleteView(DeleteView):
+class SociosDeleteView(LoginRequiredMixin, DeleteView):
     model = socios
     template_name = "App/socios_borrar.html"
     success_url = reverse_lazy("ListaSocios")
@@ -197,7 +198,7 @@ class SociosDeleteView(DeleteView):
 
 # actividades
 
-class ActividadesListView(ListView):
+class ActividadesListView(LoginRequiredMixin, ListView):
     model = actividades
     context_object_name = "actividades"
     template_name = "App/actividades_lista.html"
@@ -213,31 +214,31 @@ class ActividadesListView(ListView):
         
         return queryset
     
-class ActividadesDetailView(DetailView):
+class ActividadesDetailView(LoginRequiredMixin, DetailView):
     model = actividades
     template_name = "App/actividades_detalle.html"
 
 
-class ActividadesCreateView(CreateView):
+class ActividadesCreateView(LoginRequiredMixin, CreateView):
     model = actividades
     template_name = "App/actividades_crear.html"
     success_url = reverse_lazy("ListaActividades")  
     fields = ["nombre", "horario", "profesor", "descripcion"]  
 
 
-class ActividadesUpdateView(UpdateView):
+class ActividadesUpdateView(LoginRequiredMixin, UpdateView):
     model = actividades
     template_name = "App/actividades_editar.html"
     success_url = reverse_lazy("ListaActividades")  
     fields = ["nombre", "horario", "profesor", "descripcion"]  
 
-class ActividadesDeleteView(DeleteView):
+class ActividadesDeleteView(LoginRequiredMixin, DeleteView):
     model = actividades
     template_name = "App/actividades_borrar.html"
     success_url = reverse_lazy("ListaActividades")
 
 # sucursales 
-class SucursalesListView(ListView):
+class SucursalesListView(LoginRequiredMixin, ListView):
     model = sucursales
     context_object_name = "sucursales"
     template_name = "App/sucursales_lista.html"
@@ -253,25 +254,26 @@ class SucursalesListView(ListView):
         
         return queryset
     
-class SucursalesDetailView(DetailView):
+class SucursalesDetailView(LoginRequiredMixin, DetailView):
     model = sucursales
     template_name = "App/sucursales_detalle.html"
+   
 
 
-class SucursalesCreateView(CreateView):
+class SucursalesCreateView(LoginRequiredMixin, CreateView):
     model = sucursales
     template_name = "App/sucursales_crear.html"
     success_url = reverse_lazy("ListaSucursales")  
     fields = ["nombre", "direccion"]  
 
 
-class SucursalesUpdateView(UpdateView):
+class SucursalesUpdateView(LoginRequiredMixin, UpdateView):
     model = sucursales
     template_name = "App/sucursales_editar.html"
     success_url = reverse_lazy("ListaSucursales")  
     fields = ["nombre", "direccion"]  
 
-class SucursalesDeleteView(DeleteView):
+class SucursalesDeleteView(LoginRequiredMixin, DeleteView):
     model = sucursales
     template_name = "App/sucursales_borrar.html"
     success_url = reverse_lazy("ListaSucursales")
