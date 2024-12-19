@@ -1,23 +1,41 @@
-{% extends "App/base.html" %}
+{% extends 'App/base.html' %}
 
 {% load static %}
 
 {% block title %} Editar Usuario {% endblock title %}
 
 {% block main %}
-    
-    <h1>Editar Usuario</h1>
+    <div class="d-flex justify-content-center align-items-center vh-100" style="background-color: #000;"> <!-- Fondo negro en toda la página -->
+        {# Contenedor principal con fondo blanco y sombra #}
+        <div class="p-4 rounded shadow" style="background-color: #fff; max-width: 500px; width: 100%;">
+            <h2 class="text-center mb-4">Editar Usuario</h2>
 
-    <form action="" method="POST">
-        {% csrf_token %}
+            {# Formulario para editar el usuario #}
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ mi_form.non_field_errors }} {# Muestra errores generales del formulario #}
+                    {% for field in mi_form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger">{{ field.errors|striptags }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
 
-        <table>
-            {{ mi_form.as_table }}
-        </table>
-        <input type="submit" value="Actualizar">
+                <div class="text-center">
+                    <input type="submit" class="btn btn-success w-100" value="Actualizar">
+                </div>
+            </form>
+            {# Botón para cancelar y regresar #}
+            <div class="text-center mt-3">
+                <a href="{% url 'inicio' %}" class="btn btn-secondary w-100">Cancelar</a>
+            </div>
 
-    </form>
-
-    
-
+           
+        </div>
+    </div>
 {% endblock main %}
