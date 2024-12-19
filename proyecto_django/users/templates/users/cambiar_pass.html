@@ -2,20 +2,20 @@
 
 {% load static %}
 
-{% block title %} Editar Usuario {% endblock title %}
+{% block title %} Cambiar Contraseña {% endblock title %}
 
 {% block main %}
     <div class="d-flex justify-content-center align-items-center vh-100" style="background-color: #000;"> <!-- Fondo negro en toda la página -->
         {# Contenedor principal con fondo blanco y sombra #}
         <div class="p-4 rounded shadow" style="background-color: #fff; max-width: 500px; width: 100%;">
-            <h2 class="text-center mb-4">Editar Usuario</h2>
+            <h2 class="text-center mb-4">Cambiar Contraseña</h2>
 
-            {# Formulario para editar el usuario #}
+            {# Formulario para cambiar la contraseña #}
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
-                    {{ mi_form.non_field_errors }} {# Muestra errores generales del formulario #}
-                    {% for field in mi_form %}
+                    {{ form.non_field_errors }} {# Muestra errores generales del formulario #}
+                    {% for field in form %}
                         <div class="mb-3">
                             <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                             {{ field }}
@@ -27,22 +27,14 @@
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" class="btn btn-success w-100" value="Actualizar">
+                    <input type="submit" class="btn btn-success w-100" value="Actualizar Contraseña">
                 </div>
             </form>
-           
-
-            {# Botón para cambiar contraseña #}
-            <div class="text-center mt-3">
-                <a href="{% url 'CambiarPass' %}" class="btn btn-warning w-100">Cambiar Contraseña</a>
-            </div>
 
             {# Botón para cancelar y regresar #}
             <div class="text-center mt-3">
                 <a href="{% url 'inicio' %}" class="btn btn-secondary w-100">Cancelar</a>
             </div>
-
-           
         </div>
     </div>
 {% endblock main %}

@@ -84,3 +84,10 @@ def editar_perfil(request):
             "usuario": usuario
         }
     )
+
+from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+class CambiarPassView(LoginRequiredMixin, PasswordChangeView):
+    template_name = "users/cambiar_pass.html"
+    success_url = reverse_lazy("EditarPerfil")
