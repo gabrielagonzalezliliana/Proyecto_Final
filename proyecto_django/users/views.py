@@ -51,3 +51,36 @@ def register(request):
 
     form = UserRegisterForm()     
     return render(request,"users/registro.html" ,  {"form":form, "msg_register": msg_register})
+
+
+
+from django.contrib.auth.decorators import login_required
+from users.forms import UserEditForm
+ 
+# Vista de editar el perfil
+# Obligamos a loguearse para editar los datos del usuario activo
+@login_required
+def editar_perfil(request):
+
+    usuario = request.user
+
+    if request.method == 'POST':
+
+        miFormulario = UserEditForm(request.POST, instance=usuario)
+
+        if miFormulario.is_valid():
+            miFormulario.save()
+
+            return render(request, "App/inicio.html")
+
+    else:
+        miFormulario = UserEditForm(instance=usuario)
+
+    return render(
+        request,
+        "users/editar_usuario.html",
+        {
+            "mi_form": miFormulario,
+            "usuario": usuario
+        }
+    )
