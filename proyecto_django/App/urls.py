@@ -10,14 +10,6 @@ urlpatterns = [
     path("about/", views.about, name="about")
 ]
 
-forms_api = [
-    path('socios-formulario/', views.socios_formulario, name='socios_formulario'),
-    path('buscar-socio/', views.buscar_socio, name="buscar_socio"),
-    path('actividades-formulario/', views.actividades_formulario, name='actividades_formulario'),
-    path('sucursales-formulario/', views.sucursales_formulario, name= 'sucursales_formulario'),
-    path('buscar-actividades/', views.buscar_actividades, name="buscar_actividades"),
-    path('buscar-sucursales/', views.buscar_sucursales, name= 'buscar_sucursales')
-]
 
 clases_basadas_vistas = [
     path('socios-lista/', views.SociosListView.as_view(), name = "ListaSocios"),
@@ -37,4 +29,4 @@ clases_basadas_vistas = [
     path('sucursales-borrar/<pk>/', views.SucursalesDeleteView.as_view(), name = "BorrarSucursal")
 ]
 
-urlpatterns += forms_api + clases_basadas_vistas
+urlpatterns += clases_basadas_vistas
