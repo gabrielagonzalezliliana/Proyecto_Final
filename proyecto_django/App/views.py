@@ -279,4 +279,8 @@ class SucursalesDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("ListaSucursales")
 
 
+def about(request):
+    return render(request, "App/about.html")
+
+
 

@@ -6,7 +6,8 @@ urlpatterns = [
     path("", views.inicio, name = "inicio"),
     path("socios/", views.ver_socios, name = "socios"),
     path("actividades/", views.ver_actividades, name = "actividades"),
-    path("sucursales/", views.ver_sucursales, name = "sucursales")
+    path("sucursales/", views.ver_sucursales, name = "sucursales"),
+    path("about/", views.about, name="about")
 ]
 
 forms_api = [

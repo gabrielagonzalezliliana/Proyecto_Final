@@ -35,6 +35,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"> <a class="nav-link" href="{% url 'inicio' %}">Inicio</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'about' %}">Acerca de mi </a> </li>
           
       
           
@@ -89,11 +90,7 @@
           </div>
           
           
-          {% if request.user.is_authenticated %}
-          <li class="nav-item"> <a class="nav-link" href="{% url 'Logout' %}">Cerrar Sesion</a> </li>
-          {% else %}
-          <li class="nav-item"> <a class="nav-link" href="{% url 'Login' %}">Iniciar Sesion</a> </li>
-          {% endif %}
+         
 
 
           {# DROPDOWN PARA LA CUENTA DE USUARIO #}
@@ -115,7 +112,7 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuGuest">
                   <li><a class="dropdown-item" href="{% url 'Login' %}">Iniciar Sesión</a></li>
-                  <li><a class="dropdown-item" href="{% url 'Register' %}">Crear cuenta</a></li>
+                  <li><a class="dropdown-item" href="{% url 'Register' %}">Registrarse</a></li>
 
 
         
