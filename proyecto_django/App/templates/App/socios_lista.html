@@ -20,7 +20,7 @@
                 <!-- Formulario de búsqueda de socios -->
                 {% if not request.GET.dni %}
                  <form method="GET" action="{% url 'ListaSocios' %}">
-                  <div class="form-row">
+                  <div class="form-row mb-3">
                     <div class="col">
                       <input type="text" name="dni" class="form-control" placeholder="Buscar por DNI" value="{{ request.GET.dni }}">
                     </div>
