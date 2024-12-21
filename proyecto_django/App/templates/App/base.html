@@ -122,13 +122,16 @@
       {% endif %}
     </div>
   </nav>
+
   <div class="container">
     <div class="fh5co-banner-text-box">
-      <div class="quote-box pl-5 pr-5 wow bounceInRight">
-        <h2> DESAFIA TUS LIMITES <br><span>TRANSFORMA TU CUERPO Y MEJORA TU VIDA</span> </h2>
-      </div>
+      {% block banner_text %}
+        <div class="quote-box pl-5 pr-5 wow bounceInRight">
+          <h2> DESAFIA TUS LIMITES <br><span>TRANSFORMA TU CUERPO Y MEJORA TU VIDA</span> </h2>
+        </div>
+      {% endblock %}
+    </div>
   </div>
-</div>
 
 {% block main %}
 {% endblock main %}
@@ -144,18 +147,20 @@
         </div>
       </div>
 
+
+
       <!-- Columna del medio con la imagen -->
       <div class="col-md-6 d-flex justify-content-center align-items-center">
         <img src="{% static 'App/images/about-us-bg.jpg' %}" alt="About Us" class="img-fluid" />
       </div>
 
       <div class="col-md-3 footer3 wow bounceInRight text-end" data-wow-delay=".25s">
-        <h5>Sede Central</h5>
+        <h5 class="text-orange">Sede Central</h5>
         <p>Av.Velez Sarfiel 1800, Cordoba Capital</p>
-        <h5>Celular</h5>
+        <h5 class="text-orange"></h5>Celular</h5>
         <p>351-9663872</p>
         <p>351-7953812</p>
-        <h5>Email</h5>
+        <h5 class="text-orange"></h5>Email</h5>
         <p>FoxPro@gmail.com</p>
       </div>
     </div>
@@ -296,6 +301,28 @@
   }
 </style>
 
+<style>
+  .footer3 h5, .footer3 p {
+    color: white !important;
+    opacity: 1 !important;
+  }
+  .dropdown-menu {
+    background-color: #343a40 !important;
+    border: none !important;
+  }
+  .dropdown-menu .dropdown-item {
+    color: white !important;
+  }
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #495057 !important;
+  }
+  .text-orange {
+    color: orange !important;
+}
+
+
+
+</style>
 
  
 

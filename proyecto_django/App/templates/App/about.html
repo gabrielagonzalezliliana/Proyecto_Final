@@ -1,6 +1,23 @@
-{% extends "App/base.html" %}
 
-{% load static %}
+
+{% extends 'App/base.html' %}
+
+
+
+{% block head %}
+  <style>
+    #about-us {
+      padding-bottom: 60px;  /* Ajusta este valor para obtener el espacio deseado */
+    }
+  </style>
+{% endblock %}
+
+
+
+
+{% block banner_text %}
+  
+{% endblock %}
 
 {% block main %}
 <div id="about-us" class="container-fluid fh5co-about-us pl-0 pr-0 parallax-window" data-parallax="scroll" data-image-src="images/about-us-bg.jpg">
@@ -10,9 +27,10 @@
       <hr/>
       <p class="wow bounceInRight" data-wow-delay=".25s">Hola! Mi nombre es Gabriela Gonzalez, soy contadora con experiencia en administracion de empresas. A lo largo de mi carrera, he adquirido experiencia en analisis financiero, planificacion estrategica y liderazgo administrativo. Sin embargo en los ultimos años descubri el mundo de los datos, y decidi dar un giro a mi carrera
         Actualmente estoy realizando la Diplomatura de Data Science, y explorando herramientas como Python y Django.
-        Esta pagina esta pensada para los empleados del gimnasio para que les permita de manera eficiente gestionar socios, actividades y sucursales
+        Esta pagina esta pensada para los empleados del gimnasio para que les permita de manera eficiente gestionar socios, actividades y sucursales, permitiendoles crear, buscar, ver, editar socios, actividades y sucursales y limitando el uso exclusivo de borrado de datos a un super usuario, ademas se ven las mismas vistas que tienen acceso los clientes como actividades exclusivas para socios, sucursales y direccion y actividades con horarios en que se realizan, permitiendole a los empleados, mantener actualizada la pagina en funcion de los cambios que se van realizando en la base de datos, y que los clientes puedan consultar la pagina y que la misma contenga informacion actualizada.
          </p>
     
   </div>
 </div>
+  
 {% endblock main %}
