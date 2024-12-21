@@ -19,19 +19,19 @@
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="{{ form.username.id_for_label }}" class="form-label">Nombre de Usuario:</label>
-                    {{ form.username }}
+                    <input type="text" name="username" class="form-control" id="{{ form.username.id_for_label }}" value="{{ form.username.value }}">
                 </div>
                 <div class="mb-3">
                     <label for="{{ form.email.id_for_label }}" class="form-label">Email:</label>
-                    {{ form.email }}
+                    <input type="email" name="email" class="form-control" id="{{ form.email.id_for_label }}" value="{{ form.email.value }}">
                 </div>
                 <div class="mb-3">
                     <label for="{{ form.password1.id_for_label }}" class="form-label">Contraseña:</label>
-                    {{ form.password1 }}
+                    <input type="password" name="password1" class="form-control" id="{{ form.password1.id_for_label }}" value="{{ form.password1.value }}">
                 </div>
                 <div class="mb-3">
                     <label for="{{ form.password2.id_for_label }}" class="form-label">Confirmar Contraseña:</label>
-                    {{ form.password2 }}
+                    <input type="password" name="password2" class="form-control" id="{{ form.password2.id_for_label }}" value="{{ form.password2.value }}">
                 </div>
 
                 <div class="text-center">
@@ -41,3 +41,4 @@
         </div>
     </div>
 {% endblock main %}
+
