@@ -50,4 +50,6 @@ git clone  <URL del repositorio>
 python manage.py runserver
 El proyecto estará disponible en http://127.0.0.1:8000.
 
+link del video Youtube https://youtu.be/FLVnMAG_Ans?si=SYEKY9LCl92SWaf8
+
 
