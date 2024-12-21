@@ -20,11 +20,11 @@
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="{{ form.username.id_for_label }}" class="form-label">Nombre de Usuario:</label>
-                    <input type="text" name="username" class="form-control" id="{{ form.username.id_for_label }}" value="{{ form.username.value }}">
+                    <input type="text" name="username" class="form-control" id="{{ form.username.id_for_label }}">
                 </div>
                 <div class="mb-3">
                     <label for="{{ form.password.id_for_label }}" class="form-label">Contraseña:</label>
-                    <input type="password" name="password" class="form-control" id="{{ form.password.id_for_label }}" value="{{ form.password.value }}">
+                    <input type="password" name="password" class="form-control" id="{{ form.password.id_for_label }}" >
                 </div>
 
                 <div class="text-center">
